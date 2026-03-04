@@ -1,22 +1,22 @@
 ---
 seo:
   title: Sulala Developer Documentation
-  description: Learn how to test the Sulala app using device agents in JavaScript or Flutter.
+  description: Sulala Platform — Agent (local AI orchestration), Integrations (OAuth), and SulalaHub Store (skill registry).
 ---
 
 ::u-page-hero
 #title
-Test Sulala with Device Agents
+Sulala Platform
 
 #description
-Connect your device to Sulala.ai and test the application using JavaScript or Flutter device agents. :br Complete guide for developers.
+Local AI orchestration, OAuth integrations, and a public skill store. :br Documentation for the Agent, Integrations service, and SulalaHub Store.
 
 #links
   :::u-button
   ---
   color: neutral
   size: xl
-  to: /getting-started/introduction
+  to: /getting-started/quick-start
   trailing-icon: i-lucide-arrow-right
   ---
   Get Started
@@ -25,89 +25,125 @@ Connect your device to Sulala.ai and test the application using JavaScript or Fl
   :::u-button
   ---
   color: neutral
-  icon: i-lucide-code
+  icon: i-lucide-plug
   size: xl
-  to: /getting-started/javascript-agent
+  to: /platform/integrations
   variant: outline
   ---
-  JavaScript Agent
+  Integrations
   :::
 
   :::u-button
   ---
   color: neutral
-  icon: i-lucide-smartphone
+  icon: i-lucide-store
   size: xl
-  to: /getting-started/flutter-agent
+  to: /platform/store
   variant: outline
   ---
-  Flutter Agent
+  Store
   :::
 ::
 
 ::u-page-section
 #title
-Documentation Sections
+Documentation
 
 #features
   :::u-page-feature
   ---
-  icon: i-lucide-book-open
-  to: /getting-started/introduction
+  icon: i-lucide-rocket
+  to: /getting-started/quick-start
   ---
   #title
   [Getting Started]{.text-primary}
   
   #description
-  Learn about device agents, choose between JavaScript or Flutter implementations, and set up your testing environment.
+  Get the Agent, Integrations, and a skill from the Store running in under 10 minutes.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-code-2
-  to: /essentials/api-reference
+  icon: i-lucide-cpu
+  to: /platform/agent
   ---
   #title
-  [API Reference]{.text-primary}
+  [Sulala Agent]{.text-primary}
   
   #description
-  Complete API documentation for device-to-cloud communication. All endpoints, request/response formats, and authentication.
+  Local AI orchestration: gateway, file watcher, task scheduler, skills, and dashboard. Runs on 127.0.0.1:2026. See [CLI reference](/platform/cli-reference) for all commands.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-network
-  to: /essentials/architecture
+  icon: i-lucide-plug
+  to: /platform/integrations
   ---
   #title
-  [Architecture]{.text-primary}
+  [Integrations]{.text-primary}
   
   #description
-  Understand how device agents work without requiring IP addresses or firewall configuration. Cloud-first architecture explained.
+  OAuth connections service. Connect Gmail, GitHub, Slack, and more once; the agent uses tokens via connectionId.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-store
+  to: /platform/store
+  ---
+  #title
+  [SulalaHub Store]{.text-primary}
+  
+  #description
+  Public skill store: browse, install, and publish skills. Optional paid skills and creator accounts.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-terminal
+  to: /platform/cli-reference
+  ---
+  #title
+  [CLI Reference]{.text-primary}
+  
+  #description
+  All Sulala Agent CLI commands: status, doctor, tasks, logs, skill list/install/uninstall/update, onboard, start/stop, init, update, version.
   :::
 
   :::u-page-feature
   ---
   icon: i-lucide-book-open
-  to: /essentials/examples
+  to: /guides/deployment
   ---
   #title
-  [Examples & Tutorials]{.text-primary}
+  [Guides]{.text-primary}
   
   #description
-  Step-by-step examples for testing file search, app discovery, file uploads, and more. Practical scenarios with debugging tips.
+  Deployment, self-hosting, using the dashboard, concepts, glossary, privacy & data, limits, changelog, contribution, and get help.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-shield-check
-  to: /essentials/best-practices
+  icon: i-lucide-git-pull-request
+  to: /guides/contribution-guide
   ---
   #title
-  [Best Practices]{.text-primary}
+  [Contribution Guide]{.text-primary}
   
   #description
-  Security guidelines, performance optimization, reliability patterns, and deployment best practices for production-ready agents.
+  How to contribute — run from source, where to change code, lint and tests, and submitting skills, integrations, or docs.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-shield
+  to: /guides/privacy-and-data
+  ---
+  #title
+  [Privacy & Data]{.text-primary}
+  
+  #description
+  What runs locally, what is sent to external services, and how credentials are stored.
   :::
 
   :::u-page-feature
@@ -119,78 +155,60 @@ Documentation Sections
   [Troubleshooting]{.text-primary}
   
   #description
-  Solutions to common issues, connection problems, search failures, and frequently asked questions.
+  Common issues and FAQ for the Agent, Integrations, and Store.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-message-circle
+  to: /guides/get-help
+  ---
+  #title
+  [Get Help]{.text-primary}
+  
+  #description
+  Where to ask questions, report bugs, and join the community.
   :::
 ::
 
 ::u-page-section
 #title
-Key Features
+Platform components
 
 #features
   :::u-page-feature
   ---
-  icon: i-lucide-heart-pulse
+  icon: i-lucide-cpu
+  to: /platform/agent
   ---
   #title
-  Heartbeat Monitoring
+  [Sulala Agent]{.text-primary}
   
   #description
-  Keeps device online status with automatic heartbeat every 30 seconds. Reliable connection management with auto-reconnect.
+  Gateway, file watcher, task scheduler, AI orchestration (OpenAI, Claude, Gemini, Ollama), skills, and dashboard.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-search
+  icon: i-lucide-plug
+  to: /platform/integrations
   ---
   #title
-  Local File Search
+  [Integrations]{.text-primary}
   
   #description
-  Search files on your device from anywhere. Fast, secure, and efficient file discovery across your local filesystem.
+  Standalone OAuth server. Store tokens once; the agent and other apps use connections via connectionId.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-smartphone
+  icon: i-lucide-store
+  to: /platform/store
   ---
   #title
-  App Discovery
+  [SulalaHub Store]{.text-primary}
   
   #description
-  Find installed applications on your device. Cross-platform support for Windows, macOS, Linux, Android, and iOS.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-upload
-  ---
-  #title
-  File Upload
-  
-  #description
-  Upload files to cloud storage automatically. Handles large files, progress tracking, and multiple storage backends.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-refresh-cw
-  ---
-  #title
-  Auto-Reconnect
-  
-  #description
-  Automatically reconnects if connection drops. Robust error handling with exponential backoff and retry logic.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-monitor
-  ---
-  #title
-  System Tray
-  
-  #description
-  Runs in background on desktop platforms. System tray integration for Windows, macOS, and Linux with status indicators.
+  Skill registry and catalog. Set SKILLS_REGISTRY_URL in the agent to browse and install skills.
   :::
 ::
